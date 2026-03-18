@@ -14,8 +14,9 @@
 
 | Period | Role | Company | Industry |
 |--------|------|---------|----------|
-| Current | Senior Software Engineer | **DealMaker** | Fintech 🇨🇦 |
-| Previous | Software Engineer | **La Haus** | PropTech 🇨🇴 |
+| Current | Senior Software Engineer | **DealMaker** | Fintech |
+| Previous | Tech Lead | **La Haus** | PropTech |
+| Previous | Sr. Web UI Developer | **Globant/Disney** | Disney Cruise Line |
 
 ---
 
