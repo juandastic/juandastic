@@ -1,16 +1,69 @@
-## Hi there 👋
+# Juan David Gómez
 
-<!--
-**juandastic/juandastic** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**Senior Software Engineer · Builder · Medellín, Colombia 🇨🇴**
 
-Here are some ideas to get you started:
+10+ years building scalable web applications and digital products. Currently Senior Software Engineer at **DealMaker** (Canadian Fintech). Previously at **La Haus**.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+I care about product engineering, shipping real value, and leveraging AI to solve actual human problems — not just building hype wrappers. Unit economics, robust architecture, and great UX matter.
+
+---
+
+## Tech Stack
+
+**Core**
+
+![Ruby on Rails](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=flat-square&logo=ruby-on-rails&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+
+**AI & Data**
+
+![Google Gemini](https://img.shields.io/badge/Google_Gemini-4285F4?style=flat-square&logo=google&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
+![Neo4j](https://img.shields.io/badge/Neo4j-008CC1?style=flat-square&logo=neo4j&logoColor=white)
+
+**Infrastructure & Backend**
+
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
+![Cloudflare R2](https://img.shields.io/badge/Cloudflare_R2-F38020?style=flat-square&logo=cloudflare&logoColor=white)
+![DigitalOcean](https://img.shields.io/badge/DigitalOcean-0080FF?style=flat-square&logo=digitalocean&logoColor=white)
+
+---
+
+## Featured Projects
+
+### Synapse AI Chat
+
+A multi-thread, persona-based conversational interface with **Deep Memory**. Instead of traditional RAG, it uses a **Temporal Knowledge Graph** (Neo4j + Graphiti) and a custom Context Hydration pipeline to maintain persistent psychological context across infinite conversation threads.
+
+`React 19` · `Convex` · `Python FastAPI` · `Neo4j` · `Graphiti`
+
+---
+
+### NutriAgent
+
+An AI-powered nutrition tracker that owns its raw data. It understands text and meal photos, logs macros into Supabase, and syncs with Google Sheets — no subscription, no walled garden.
+
+`Python` · `LangGraph` · `Telegram` · `Supabase` · `Google Sheets API`
+
+---
+
+## Writing
+
+I write about the engineering reality of building AI products — the tradeoffs, the architecture decisions, and what actually works.
+
+- [I Ditched MyFitnessPal and Built an AI Agent to Track My Food](https://dev.to/juandastic/i-ditched-myfitnesspal-and-built-an-ai-agent-to-track-my-food-3eia)
+- [Beyond RAG: Building an AI Companion with Deep Memory Using Knowledge Graphs](https://dev.to/juandastic/beyond-rag-building-an-ai-companion-with-deep-memory-using-knowledge-graphs-2e6e)
+- [Full Circle: Giving My AI's Knowledge Graph a Notion Interface Using MCP](https://dev.to/juandastic/full-circle-giving-my-ais-knowledge-graph-a-notion-interface-using-mcp-2dmp)
+
+→ [All articles on Dev.to](https://dev.to/juandastic)
+
+---
+
+## Connect
+
+[![X](https://img.shields.io/badge/X-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/juandastic)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/juandastic/)
+[![Dev.to](https://img.shields.io/badge/Dev.to-0A0A0A?style=flat-square&logo=devdotto&logoColor=white)](https://dev.to/juandastic)
