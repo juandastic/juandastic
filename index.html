@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juan David Gómez — Senior Software Engineer</title>
+  <meta name="description" content="Senior Software Engineer building AI systems that solve real problems. 10+ years shipping scalable products. Based in Medellín, Colombia." />
+  <meta property="og:title" content="Juan David Gómez — Senior Software Engineer" />
+  <meta property="og:description" content="Senior Software Engineer building AI systems that solve real problems. 10+ years shipping scalable products." />
+  <meta property="og:url" content="https://juandago.dev" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@juandastic" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0c0c0c;
+      --surface: #141414;
+      --border: #1f1f1f;
+      --text-primary: #ededed;
+      --text-secondary: #888;
+      --text-tertiary: #555;
+      --accent: #d4a847;
+      --accent-dim: rgba(212, 168, 71, 0.12);
+      --link: #ededed;
+      --link-hover: #d4a847;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --max-w: 620px;
+    }
+
+    html {
+      font-size: 15px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font);
+      font-weight: 300;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      padding: 0 20px;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 52px 0 0;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .name {
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+    }
+
+    .location {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      margin-top: 2px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding-top: 2px;
+    }
+
+    .social-links a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+      transition: color 0.15s;
+    }
+
+    .social-links a:hover {
+      color: var(--text-primary);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 64px 0 56px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-title {
+      font-size: clamp(1.55rem, 4vw, 2rem);
+      font-weight: 300;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-bio {
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      max-width: 520px;
+      line-height: 1.75;
+    }
+
+    .hero-bio p + p {
+      margin-top: 14px;
+    }
+
+    /* ── Section ── */
+    section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 28px;
+    }
+
+    /* ── Career ── */
+    .career-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .career-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px 24px;
+      align-items: start;
+    }
+
+    .career-role {
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      font-weight: 400;
+    }
+
+    .career-company {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .career-industry {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      margin-top: 3px;
+    }
+
+    .career-period {
+      font-size: 0.78rem;
+      color: var(--text-tertiary);
+      text-align: right;
+      white-space: nowrap;
+      padding-top: 3px;
+    }
+
+    /* ── Projects ── */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .project {
+      display: block;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .project-name {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .project-status {
+      font-size: 0.72rem;
+      color: var(--accent);
+      background: var(--accent-dim);
+      padding: 1px 7px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+    }
+
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2px 9px;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 14px;
+    }
+
+    .project-links a {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .project-links a:hover {
+      color: var(--link-hover);
+    }
+
+    .project-links a::before {
+      content: '↗ ';
+      font-size: 0.72rem;
+    }
+
+    /* ── Writing ── */
+    .writing-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .article {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .article a {
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.15s;
+      line-height: 1.4;
+    }
+
+    .article a:hover {
+      color: var(--link-hover);
+    }
+
+    .article-meta {
+      font-size: 0.78rem;
+      color: var(--text-tertiary);
+    }
+
+    .writing-more {
+      margin-top: 28px;
+    }
+
+    .writing-more a {
+      font-size: 0.83rem;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .writing-more a:hover {
+      color: var(--text-primary);
+    }
+
+    /* ── Stack ── */
+    .stack-groups {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .stack-group {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .stack-group-label {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      padding-top: 3px;
+    }
+
+    .stack-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 40px 0 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-tertiary);
+    }
+
+    .footer-copy a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-copy a:hover {
+      color: var(--text-primary);
+    }
+
+    .footer-email {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-email:hover {
+      color: var(--text-primary);
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .social-links {
+        gap: 14px;
+      }
+
+      .career-item {
+        grid-template-columns: 1fr;
+      }
+
+      .career-period {
+        text-align: left;
+      }
+
+      .stack-group {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <div class="header-inner">
+        <div>
+          <div class="name">Juan David Gómez</div>
+          <div class="location">Medellín, Colombia</div>
+        </div>
+        <nav class="social-links">
+          <a href="https://github.com/juandastic" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/juandastic/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://dev.to/juandastic" target="_blank" rel="noopener">Dev.to</a>
+          <a href="https://x.com/juandastic" target="_blank" rel="noopener">X</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1 class="hero-title">
+        Senior engineer building <em>AI systems</em><br>
+        that solve real problems.
+      </h1>
+      <div class="hero-bio">
+        <p>
+          10+ years shipping scalable web applications and digital products. I care about product engineering,
+          unit economics, and leveraging AI to solve actual human problems.
+        </p>
+        <p>
+          I build the things I want to exist: tools I use daily, architectures I believe in, and systems
+          I'm willing to maintain. The best software comes from identifying real friction and shipping
+          something honest about the tradeoffs.
+        </p>
+      </div>
+    </div>
+
+    <!-- Career -->
+    <section>
+      <div class="section-label">Experience</div>
+      <div class="career-list">
+        <div class="career-item">
+          <div>
+            <div class="career-role">Senior Software Engineer</div>
+            <div class="career-company">DealMaker</div>
+            <div class="career-industry">Fintech · Capital markets infrastructure</div>
+          </div>
+          <div class="career-period">Current</div>
+        </div>
+        <div class="career-item">
+          <div>
+            <div class="career-role">Tech Lead</div>
+            <div class="career-company">La Haus</div>
+            <div class="career-industry">PropTech · LatAm real estate marketplace</div>
+          </div>
+          <div class="career-period">Previous</div>
+        </div>
+        <div class="career-item">
+          <div>
+            <div class="career-role">Sr. Web UI Developer</div>
+            <div class="career-company">Globant · Disney Cruise Line</div>
+            <div class="career-industry">Entertainment · Guest experience platforms</div>
+          </div>
+          <div class="career-period">Previous</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <div class="section-label">Projects</div>
+      <div class="projects-list">
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Synapse AI Chat</span>
+            <span class="project-status">live</span>
+          </div>
+          <p class="project-desc">
+            A multi-thread, persona-based conversational interface with deep memory. Instead of traditional RAG,
+            it uses a temporal knowledge graph (Neo4j + Graphiti) and a custom context hydration pipeline
+            to maintain persistent psychological context across infinite conversation threads. Solves the
+            real problem of AI companions that forget — permanently.
+          </p>
+          <div class="project-stack">
+            <span class="tag">React 19</span>
+            <span class="tag">Convex</span>
+            <span class="tag">Python FastAPI</span>
+            <span class="tag">Neo4j</span>
+            <span class="tag">Graphiti</span>
+            <span class="tag">Gemini Flash</span>
+          </div>
+          <div class="project-links">
+            <a href="https://synapse-chat.juandago.dev/" target="_blank" rel="noopener">Live App</a>
+            <a href="https://github.com/juandastic/synapse-chat-ai" target="_blank" rel="noopener">Frontend</a>
+            <a href="https://github.com/juandastic/synapse-cortex" target="_blank" rel="noopener">Backend</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">NutriAgent</span>
+            <span class="project-status">live</span>
+          </div>
+          <p class="project-desc">
+            An AI nutrition tracker that owns its raw data. Understands natural language and meal photos,
+            logs macros via Telegram or web, syncs to Google Sheets — no subscription, no walled garden.
+            Built because MyFitnessPal didn't fit real workflows. Used daily since launch.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Python</span>
+            <span class="tag">LangGraph</span>
+            <span class="tag">Telegram Bot</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">Google Sheets API</span>
+          </div>
+          <div class="project-links">
+            <a href="https://nutriagent.juandago.dev/" target="_blank" rel="noopener">Live App</a>
+            <a href="https://github.com/juandastic/nutri-agent-bot" target="_blank" rel="noopener">Bot Backend</a>
+            <a href="https://github.com/juandastic/nutri-agent-web" target="_blank" rel="noopener">Web Frontend</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section>
+      <div class="section-label">Writing</div>
+      <div class="writing-list">
+
+        <div class="article">
+          <a href="https://dev.to/juandastic/full-circle-giving-my-ais-knowledge-graph-a-notion-interface-using-mcp-2dmp" target="_blank" rel="noopener">
+            Full Circle: Giving My AI's Knowledge Graph a Notion Interface Using MCP
+          </a>
+          <div class="article-meta">How MCP turns rigid sync into a reasoning tool · Dev.to</div>
+        </div>
+
+        <div class="article">
+          <a href="https://dev.to/juandastic/beyond-rag-building-an-ai-companion-with-deep-memory-using-knowledge-graphs-2e6e" target="_blank" rel="noopener">
+            Beyond RAG: Building an AI Companion with Deep Memory Using Knowledge Graphs
+          </a>
+          <div class="article-meta">Why vector search misses causality, and what to do about it · Dev.to</div>
+        </div>
+
+        <div class="article">
+          <a href="https://dev.to/juandastic/i-ditched-myfitnesspal-and-built-an-ai-agent-to-track-my-food-3eia" target="_blank" rel="noopener">
+            I Ditched MyFitnessPal and Built an AI Agent to Track My Food
+          </a>
+          <div class="article-meta">Full-stack AI from frustration to daily driver · Dev.to</div>
+        </div>
+
+      </div>
+      <div class="writing-more">
+        <a href="https://dev.to/juandastic" target="_blank" rel="noopener">All articles on Dev.to →</a>
+      </div>
+    </section>
+
+    <!-- Stack -->
+    <section>
+      <div class="section-label">Stack</div>
+      <div class="stack-groups">
+        <div class="stack-group">
+          <span class="stack-group-label">Core</span>
+          <div class="stack-items">
+            <span class="tag">Ruby on Rails</span>
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <span class="stack-group-label">AI & Data</span>
+          <div class="stack-items">
+            <span class="tag">LangChain</span>
+            <span class="tag">LangGraph</span>
+            <span class="tag">Neo4j</span>
+            <span class="tag">Gemini</span>
+            <span class="tag">OpenAI</span>
+            <span class="tag">MCP</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <span class="stack-group-label">Infra</span>
+          <div class="stack-items">
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">Convex</span>
+            <span class="tag">Cloudflare</span>
+            <span class="tag">DigitalOcean</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <span class="footer-copy">
+        juandago.dev · <a href="https://github.com/juandastic" target="_blank" rel="noopener">@juandastic</a>
+      </span>
+      <a class="footer-email" href="mailto:juandastic@gmail.com">juandastic@gmail.com</a>
+    </footer>
+
+  </div>
+</body>
+</html>

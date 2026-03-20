@@ -6,7 +6,7 @@
 [![X](https://img.shields.io/badge/X-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/juandastic)
 [![Dev.to](https://img.shields.io/badge/Dev.to-0A0A0A?style=flat-square&logo=devdotto&logoColor=white)](https://dev.to/juandastic)
 
-10+ years building scalable web applications and digital products. I care about product engineering, shipping real value, and leveraging AI to solve actual human problems — not just building hype wrappers. Unit economics, robust architecture, and great UX matter.
+10+ years building scalable web applications and digital products. I care about product engineering, shipping real value, and leveraging AI to solve actual human problems. Unit economics, robust architecture, and great UX matter.
 
 ---
 
