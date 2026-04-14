@@ -1,78 +1,79 @@
-# Juan David *Gómez*
+# Juan David Gómez
 
-`SENIOR SOFTWARE ENGINEER`
+**Senior Software Engineer · Builder · Medellín, Colombia 🇨🇴**
 
-Building AI systems that solve real problems. 10+ years shipping scalable web applications and digital products. I thrive in fast-paced environments, moving quickly through rapid iterations and leveraging AI to solve actual human problems.
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/juandastic/)
+[![X](https://img.shields.io/badge/X-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/juandastic)
+[![Dev.to](https://img.shields.io/badge/Dev.to-0A0A0A?style=flat-square&logo=devdotto&logoColor=white)](https://dev.to/juandastic)
 
-[GitHub](https://github.com/juandastic) · [LinkedIn](https://www.linkedin.com/in/juandastic/) · [X](https://x.com/juandastic) · [Dev.to](https://dev.to/juandastic)
-
----
-
-### 01 — Experience
-
-**Senior Software Engineer** · DealMaker `NOW`
-Fintech · Capital markets infrastructure · *2025 — Present*
-
-**Tech Lead** · La Haus
-PropTech · LatAm real estate marketplace · *2019 — 2025*
-
-**Sr. Web UI Developer** · Globant · Disney Cruise Line
-Entertainment · Guest experience platforms · *2017 — 2019*
+10+ years building scalable web applications and digital products. I care about product engineering, shipping real value, and leveraging AI to solve actual human problems. Unit economics, robust architecture, and great UX matter.
 
 ---
 
-### 02 — Projects
+## Career
 
-#### Synapse AI Chat 🟢 `live`
-
-A multi-thread, persona-based conversational interface with deep memory. Uses a temporal knowledge graph (Neo4j + Graphiti) and a custom context hydration pipeline to maintain persistent psychological context across infinite conversation threads.
-
-`React 19` · `Convex` · `Python` · `FastAPI` · `Neo4j` · `Graphiti` · `Gemini`
-
-[↗ Live App](https://synapse-chat.juandago.dev/) · [↗ Frontend](https://github.com/juandastic/synapse-chat-ai) · [↗ Backend](https://github.com/juandastic/synapse-cortex)
-
-#### NutriAgent 🟢 `live`
-
-An AI nutrition tracker that owns its raw data. Understands natural language and meal photos, logs macros via Telegram or web, syncs to Google Sheets — no subscription, no walled garden. Used daily since launch.
-
-`Python` · `LangGraph` · `Telegram Bot` · `Supabase` · `Google Sheets API`
-
-[↗ Live App](https://nutriagent.juandago.dev/) · [↗ Bot](https://github.com/juandastic/nutri-agent-bot) · [↗ Backend](https://github.com/juandastic/nutri-agent-web)
+| Period | Role | Company | Industry |
+|--------|------|---------|----------|
+| Current | Senior Software Engineer | **DealMaker** | Fintech |
+| Previous | Tech Lead | **La Haus** | PropTech |
+| Previous | Sr. Web UI Developer | **Globant/Disney** | Disney Cruise Line |
 
 ---
 
-### 03 — Writing
+## Tech Stack
 
-- [**I Benchmarked Graphiti vs Mem0: The Hidden Cost of Context Blindness in AI Memory**](https://dev.to/juandastic/i-benchmarked-graphiti-vs-mem0-the-hidden-cost-of-context-blindness-in-ai-memory-4le3)
-- [**Full Circle: Giving My AI's Knowledge Graph a Notion Interface Using MCP**](https://dev.to/juandastic/full-circle-giving-my-ais-knowledge-graph-a-notion-interface-using-mcp-2dmp)
-- [**Scaling AI Memory: How I Tamed a 120k-Token Prompt with Deterministic GraphRAG**](https://dev.to/juandastic/scaling-ai-memory-how-i-tamed-a-120k-token-prompt-with-deterministic-graphrag-4f85)
-- [**When 5 Minutes Isn't Enough: Moving AI Ingestion from Sync to Async**](https://dev.to/juandastic/when-5-minutes-isnt-enough-moving-ai-ingestion-from-sync-to-async-and-saving-99-compute-59o8)
-- [**Beyond RAG: Building an AI Companion with Deep Memory Using Knowledge Graphs**](https://dev.to/juandastic/beyond-rag-building-an-ai-companion-with-deep-memory-using-knowledge-graphs-2e6e)
-- [**I Used My AI Nutrition Agent Every Day for a Month. Here's What I Actually Had to Fix**](https://dev.to/juandastic/i-used-my-ai-nutrition-coach-every-day-for-a-month-heres-what-i-actually-had-to-fix-1ej8)
-- [**I Ditched MyFitnessPal and Built an AI Agent to Track My Food**](https://dev.to/juandastic/i-ditched-myfitnesspal-and-built-an-ai-agent-to-track-my-food-3eia)
+**Core** &nbsp;
+![Ruby on Rails](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=flat-square&logo=ruby-on-rails&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 
-[↗ All articles on Dev.to](https://dev.to/juandastic)
+**AI & Data** &nbsp;
+![Google Gemini](https://img.shields.io/badge/Google_Gemini-4285F4?style=flat-square&logo=google&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
+![Neo4j](https://img.shields.io/badge/Neo4j-008CC1?style=flat-square&logo=neo4j&logoColor=white)
 
----
-
-### 04 — Stack
-
-**Core** · `Ruby on Rails` `React` `TypeScript` `Python`
-
-**AI & Data** · `LangChain` `LangGraph` `Neo4j` `Gemini` `OpenAI` `MCP`
-
-**Infra** · `PostgreSQL` `Supabase` `Convex` `Cloudflare` `DigitalOcean`
+**Infrastructure** &nbsp;
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
+![Cloudflare R2](https://img.shields.io/badge/Cloudflare_R2-F38020?style=flat-square&logo=cloudflare&logoColor=white)
+![DigitalOcean](https://img.shields.io/badge/DigitalOcean-0080FF?style=flat-square&logo=digitalocean&logoColor=white)
 
 ---
 
-### 05 — Contact
+## Featured Projects
 
-Have a project in mind, want to collaborate, or just want to say hi?
+### 🧠 Synapse AI Chat
 
-- 𝕏 DM on X — [@juandastic](https://x.com/juandastic)
-- ✉️ Email — [juandastic@gmail.com](mailto:juandastic@gmail.com)
-- 💼 LinkedIn — [juandastic](https://www.linkedin.com/in/juandastic/)
+A multi-thread, persona-based conversational interface with **Deep Memory**. Instead of traditional RAG, it uses a **Temporal Knowledge Graph** (Neo4j + Graphiti) and a custom Context Hydration pipeline to maintain persistent psychological context across infinite conversation threads.
+
+`React 19` · `Convex` · `Python FastAPI` · `Neo4j` · `Graphiti`
+
+[![Live App](https://img.shields.io/badge/▶_Live_App-000000?style=flat-square&logo=vercel&logoColor=white)](https://synapse-chat.juandago.dev/)
+[![Frontend](https://img.shields.io/badge/Frontend_Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/juandastic/synapse-chat-ai)
+[![Backend](https://img.shields.io/badge/Backend_Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/juandastic/synapse-cortex)
 
 ---
 
-*© 2026 Juan David Gómez · Medellín, Colombia*
+### 🥗 NutriAgent
+
+An AI-powered nutrition tracker that owns its raw data. It understands text and meal photos, logs macros into Supabase, and syncs with Google Sheets — no subscription, no walled garden.
+
+`Python` · `LangGraph` · `Telegram` · `Supabase` · `Google Sheets API`
+
+[![Live App](https://img.shields.io/badge/▶_Live_App-000000?style=flat-square&logo=vercel&logoColor=white)](https://nutriagent.juandago.dev/)
+[![Bot Backend](https://img.shields.io/badge/Bot_Backend_Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/juandastic/nutri-agent-bot)
+[![Web Frontend](https://img.shields.io/badge/Web_Frontend_Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/juandastic/nutri-agent-web)
+
+---
+
+## Writing
+
+I write about the engineering reality of building AI products — the tradeoffs, the architecture decisions, and what actually works.
+
+- [I Ditched MyFitnessPal and Built an AI Agent to Track My Food](https://dev.to/juandastic/i-ditched-myfitnesspal-and-built-an-ai-agent-to-track-my-food-3eia)
+- [Beyond RAG: Building an AI Companion with Deep Memory Using Knowledge Graphs](https://dev.to/juandastic/beyond-rag-building-an-ai-companion-with-deep-memory-using-knowledge-graphs-2e6e)
+- [Scaling AI Memory: How I Tamed a 120k-Token Prompt with Deterministic GraphRAG](https://dev.to/juandastic/scaling-ai-memory-how-i-tamed-a-120k-token-prompt-with-deterministic-graphrag-4f85)
+- [Full Circle: Giving My AI's Knowledge Graph a Notion Interface Using MCP](https://dev.to/juandastic/full-circle-giving-my-ais-knowledge-graph-a-notion-interface-using-mcp-2dmp)
+
+→ [All articles on Dev.to](https://dev.to/juandastic)
