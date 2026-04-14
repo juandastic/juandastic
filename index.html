@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark" style="color-scheme: dark;">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juan David Gómez — Senior Software Engineer</title>
-  <meta name="description" content="Senior Software Engineer building AI systems that solve real problems. 10+ years shipping scalable products. Based in Medellín, Colombia." />
+  <meta name="description" content="Senior engineer building AI systems that solve real problems. 10+ years shipping scalable web applications and digital products." />
+  <meta name="author" content="Juan David Gómez" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23c9963a'/></svg>" />
   <meta property="og:title" content="Juan David Gómez — Senior Software Engineer" />
-  <meta property="og:description" content="Senior Software Engineer building AI systems that solve real problems. 10+ years shipping scalable products." />
-  <meta property="og:url" content="https://juandago.dev" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:creator" content="@juandastic" />
+  <meta property="og:description" content="Senior engineer building AI systems that solve real problems. 10+ years shipping scalable web applications and digital products." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -21,508 +22,904 @@
     }
 
     :root {
-      --bg: #0c0c0c;
-      --surface: #141414;
-      --border: #1f1f1f;
-      --text-primary: #ededed;
-      --text-secondary: #888;
-      --text-tertiary: #555;
-      --accent: #d4a847;
-      --accent-dim: rgba(212, 168, 71, 0.12);
-      --link: #ededed;
-      --link-hover: #d4a847;
-      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --max-w: 620px;
+      --bg: #09090b;
+      --foreground: #fafafa;
+      --foreground-70: rgba(250, 250, 250, 0.7);
+      --foreground-80: rgba(250, 250, 250, 0.8);
+      --muted: #27272a;
+      --muted-foreground: #a1a1aa;
+      --border: #27272a;
+      --primary: #c9963a;
+      --primary-10: rgba(201, 150, 58, 0.1);
+      --primary-30: rgba(201, 150, 58, 0.3);
+      --primary-40: rgba(201, 150, 58, 0.4);
+      --primary-70: rgba(201, 150, 58, 0.7);
+      --border-50: rgba(39, 39, 42, 0.5);
+      --font-sans: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+      --max-w: 56rem;
     }
 
     html {
-      font-size: 15px;
       scroll-behavior: smooth;
     }
 
     body {
       background: var(--bg);
-      color: var(--text-primary);
-      font-family: var(--font);
-      font-weight: 300;
-      line-height: 1.65;
+      color: var(--foreground);
+      font-family: var(--font-sans);
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       min-height: 100vh;
-      padding: 0 20px;
     }
 
-    /* ── Layout ── */
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
+    /* ── Utilities ── */
+    .max-w { max-width: var(--max-w); margin: 0 auto; width: 100%; }
+    .section-padding { padding: 0 1.5rem; }
+    .section-divider {
+      width: 3rem;
+      height: 1px;
+      background: var(--primary-30);
+      margin-top: 1rem;
+      margin-bottom: 4rem;
     }
-
-    /* ── Header ── */
-    header {
-      padding: 52px 0 0;
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .name {
-      font-size: 1.05rem;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      color: var(--text-primary);
-    }
-
-    .location {
-      font-size: 0.8rem;
-      color: var(--text-tertiary);
-      margin-top: 2px;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      padding-top: 2px;
-    }
-
-    .social-links a {
-      color: var(--text-tertiary);
-      text-decoration: none;
-      font-size: 0.8rem;
-      letter-spacing: 0.02em;
-      transition: color 0.15s;
-    }
-
-    .social-links a:hover {
-      color: var(--text-primary);
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--primary);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
     }
 
     /* ── Hero ── */
     .hero {
-      padding: 64px 0 56px;
-      border-bottom: 1px solid var(--border);
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 1.5rem;
+      overflow: hidden;
     }
 
-    .hero-title {
-      font-size: clamp(1.55rem, 4vw, 2rem);
-      font-weight: 300;
-      line-height: 1.35;
+    .hero-glow {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 24rem;
+      height: 24rem;
+      background: rgba(201, 150, 58, 0.04);
+      border-radius: 50%;
+      filter: blur(128px);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--primary);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .hero-name {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: normal;
       letter-spacing: -0.02em;
-      color: var(--text-primary);
-      margin-bottom: 24px;
+      line-height: 0.9;
+      margin-bottom: 2.5rem;
     }
 
-    .hero-title em {
-      font-style: normal;
-      color: var(--accent);
+    .hero-name em {
+      font-style: italic;
+    }
+
+    .hero-line {
+      width: 4rem;
+      height: 1px;
+      background: var(--primary-40);
+      margin-bottom: 2rem;
     }
 
     .hero-bio {
-      font-size: 0.93rem;
-      color: var(--text-secondary);
-      max-width: 520px;
+      font-size: 1rem;
+      color: var(--muted-foreground);
+      max-width: 36rem;
       line-height: 1.75;
     }
 
-    .hero-bio p + p {
-      margin-top: 14px;
+    .hero-actions {
+      margin-top: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
     }
 
-    /* ── Section ── */
-    section {
-      padding: 48px 0;
-      border-bottom: 1px solid var(--border);
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      color: var(--bg);
+      background: var(--primary);
+      padding: 0.625rem 1rem;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      transition: background 0.3s;
     }
 
-    section:last-of-type {
-      border-bottom: none;
+    .btn-primary:hover {
+      background: rgba(201, 150, 58, 0.9);
     }
 
-    .section-label {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 28px;
+    .hero-sep {
+      width: 1px;
+      height: 1.25rem;
+      background: var(--border);
     }
 
-    /* ── Career ── */
-    .career-list {
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted-foreground);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social-link:hover {
+      color: var(--primary);
+    }
+
+    .social-link span {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .social-link svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.4;
+    }
+
+    .hero-scroll svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--muted-foreground);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(4px); }
+      60% { transform: translateY(2px); }
+    }
+
+    /* ── Experience ── */
+    .experience {
+      padding: 6rem 1.5rem 8rem;
+    }
+
+    .experience-list {
       display: flex;
       flex-direction: column;
-      gap: 20px;
     }
 
-    .career-item {
+    .experience-item {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0 2.5rem;
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 8px 24px;
+      gap: 0.5rem 2rem;
       align-items: start;
     }
 
-    .career-role {
-      font-size: 0.92rem;
-      color: var(--text-primary);
-      font-weight: 400;
+    .experience-role-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.375rem;
     }
 
-    .career-company {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      margin-top: 2px;
+    .experience-role {
+      font-size: 1.125rem;
+      font-weight: 500;
     }
 
-    .career-industry {
+    .experience-badge {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: var(--primary-10);
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+    }
+
+    .experience-company {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    .experience-company-name {
+      color: var(--foreground-70);
+      font-weight: 500;
+    }
+
+    .experience-dash {
+      margin: 0 0.5rem;
+      color: var(--border);
+    }
+
+    .experience-period {
+      font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--text-tertiary);
-      margin-top: 3px;
-    }
-
-    .career-period {
-      font-size: 0.78rem;
-      color: var(--text-tertiary);
-      text-align: right;
-      white-space: nowrap;
-      padding-top: 3px;
+      color: var(--muted-foreground);
+      padding-top: 0.375rem;
     }
 
     /* ── Projects ── */
-    .projects-list {
-      display: flex;
-      flex-direction: column;
-      gap: 36px;
+    .projects {
+      padding: 6rem 1.5rem 8rem;
     }
 
-    .project {
-      display: block;
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.5rem 2rem;
+      transition: border-color 0.3s;
+    }
+
+    .project-card:hover {
+      border-color: var(--primary-30);
     }
 
     .project-header {
       display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 8px;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1rem;
     }
 
     .project-name {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-primary);
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
     }
 
-    .project-status {
-      font-size: 0.72rem;
-      color: var(--accent);
-      background: var(--accent-dim);
-      padding: 1px 7px;
-      border-radius: 20px;
-      letter-spacing: 0.04em;
+    .project-live {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 10px;
+      font-family: var(--font-mono);
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      flex-shrink: 0;
+      padding-top: 0.25rem;
+    }
+
+    .project-live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
     }
 
     .project-desc {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
       line-height: 1.7;
-      margin-bottom: 12px;
+      margin-bottom: 1.5rem;
     }
 
     .project-stack {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 14px;
+      gap: 0.375rem;
+      margin-bottom: 1.5rem;
     }
 
     .tag {
-      font-size: 0.72rem;
-      color: var(--text-tertiary);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 2px 9px;
-      border-radius: 3px;
-      letter-spacing: 0.02em;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--muted-foreground);
+      background: var(--muted);
+      padding: 0.125rem 0.5rem;
+      border-radius: 0.25rem;
     }
 
     .project-links {
       display: flex;
-      gap: 14px;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .project-links a {
-      font-size: 0.8rem;
-      color: var(--text-tertiary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: var(--foreground-70);
       text-decoration: none;
-      transition: color 0.15s;
+      transition: color 0.2s;
     }
 
     .project-links a:hover {
-      color: var(--link-hover);
+      color: var(--primary);
     }
 
-    .project-links a::before {
-      content: '↗ ';
-      font-size: 0.72rem;
+    .project-links a svg {
+      width: 0.75rem;
+      height: 0.75rem;
     }
 
     /* ── Writing ── */
-    .writing-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+    .writing {
+      padding: 6rem 1.5rem 8rem;
     }
 
-    .article {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+    .writing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
 
-    .article a {
-      font-size: 0.92rem;
-      color: var(--text-primary);
+    .article-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      overflow: hidden;
       text-decoration: none;
-      transition: color 0.15s;
-      line-height: 1.4;
+      color: inherit;
+      transition: border-color 0.3s;
     }
 
-    .article a:hover {
-      color: var(--link-hover);
+    .article-card:hover {
+      border-color: var(--primary-30);
+    }
+
+    .article-card-featured {
+      grid-column: 1 / -1;
+    }
+
+    .article-img {
+      aspect-ratio: 2.4 / 1;
+      overflow: hidden;
+      background: var(--muted);
+    }
+
+    .article-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .article-card:hover .article-img img {
+      transform: scale(1.03);
+    }
+
+    .article-body {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .article-card-featured .article-body {
+      padding: 1.5rem 2rem;
+      justify-content: center;
     }
 
     .article-meta {
-      font-size: 0.78rem;
-      color: var(--text-tertiary);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--muted-foreground);
+      font-family: var(--font-mono);
+    }
+
+    .article-meta-dot {
+      color: var(--border);
+    }
+
+    .article-meta svg {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: 1.125rem;
+      line-height: 1.35;
+      margin-top: 0.625rem;
+      margin-bottom: 0.75rem;
+      transition: color 0.3s;
+    }
+
+    .article-card:hover .article-title {
+      color: var(--primary);
+    }
+
+    .article-card-featured .article-title {
+      font-size: 1.25rem;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-tag {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      color: var(--muted-foreground);
+      background: var(--muted);
+      padding: 0.125rem 0.5rem;
+      border-radius: 0.25rem;
+    }
+
+    .article-read {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: var(--primary);
+      margin-top: auto;
+      padding-top: 0.5rem;
+    }
+
+    .article-read svg {
+      width: 0.875rem;
+      height: 0.875rem;
+      transition: transform 0.3s;
+    }
+
+    .article-card:hover .article-read svg {
+      transform: translate(2px, -2px);
     }
 
     .writing-more {
-      margin-top: 28px;
+      margin-top: 2.5rem;
+      text-align: center;
     }
 
     .writing-more a {
-      font-size: 0.83rem;
-      color: var(--text-tertiary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--primary);
       text-decoration: none;
-      transition: color 0.15s;
+      transition: color 0.2s;
     }
 
     .writing-more a:hover {
-      color: var(--text-primary);
+      color: var(--primary-70);
+    }
+
+    .writing-more a svg {
+      width: 0.875rem;
+      height: 0.875rem;
     }
 
     /* ── Stack ── */
+    .stack-section {
+      padding: 6rem 1.5rem 8rem;
+    }
+
     .stack-groups {
       display: flex;
       flex-direction: column;
-      gap: 16px;
-    }
-
-    .stack-group {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 10px;
-      align-items: start;
+      gap: 2.5rem;
     }
 
     .stack-group-label {
-      font-size: 0.75rem;
-      color: var(--text-tertiary);
-      padding-top: 3px;
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--primary-70);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
     }
 
     .stack-items {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px;
+      gap: 0.5rem;
+    }
+
+    .stack-tag {
+      font-size: 0.875rem;
+      font-family: var(--font-mono);
+      color: var(--foreground-80);
+      background: var(--muted);
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.375rem;
+      border: 1px solid var(--border-50);
+    }
+
+    /* ── Contact ── */
+    .contact {
+      padding: 6rem 1.5rem 8rem;
+    }
+
+    .contact-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(1.875rem, 4vw, 2.25rem);
+      margin-bottom: 1rem;
+    }
+
+    .contact-text {
+      color: var(--muted-foreground);
+      max-width: 32rem;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.3s;
+    }
+
+    .contact-card:hover {
+      border-color: var(--primary-30);
+    }
+
+    .contact-card svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--muted-foreground);
+      transition: color 0.3s;
+    }
+
+    .contact-card:hover svg {
+      color: var(--primary);
+    }
+
+    .contact-card-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .contact-card:hover .contact-card-label {
+      color: var(--primary);
+    }
+
+    .contact-card-handle {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted-foreground);
+      margin-top: 0.25rem;
+    }
+
+    .contact-socials {
+      margin-top: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
     }
 
     /* ── Footer ── */
     footer {
-      padding: 40px 0 52px;
+      padding: 3rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 1.5rem;
     }
 
     .footer-copy {
-      font-size: 0.78rem;
-      color: var(--text-tertiary);
+      font-size: 0.75rem;
+      color: var(--muted-foreground);
     }
 
-    .footer-copy a {
-      color: var(--text-tertiary);
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .footer-socials a {
+      color: var(--muted-foreground);
       text-decoration: none;
-      transition: color 0.15s;
+      transition: color 0.3s;
     }
 
-    .footer-copy a:hover {
-      color: var(--text-primary);
+    .footer-socials a:hover {
+      color: var(--primary);
     }
 
-    .footer-email {
-      font-size: 0.8rem;
-      color: var(--text-tertiary);
-      text-decoration: none;
-      transition: color 0.15s;
+    .footer-socials a svg {
+      width: 1rem;
+      height: 1rem;
     }
 
-    .footer-email:hover {
-      color: var(--text-primary);
-    }
-
-    /* ── Divider ── */
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: 0;
+    /* ── Arrow icon ── */
+    .icon-arrow-up-right {
+      display: inline-block;
+      width: 0.75rem;
+      height: 0.75rem;
     }
 
     /* ── Responsive ── */
-    @media (max-width: 480px) {
-      .header-inner {
-        flex-direction: column;
-        gap: 14px;
+    @media (min-width: 768px) {
+      .section-padding { padding: 0 3rem; }
+      .hero { padding: 0 3rem; }
+      .experience { padding: 6rem 3rem 8rem; }
+      .projects { padding: 6rem 3rem 8rem; }
+      .writing { padding: 6rem 3rem 8rem; }
+      .stack-section { padding: 6rem 3rem 8rem; }
+      .contact { padding: 6rem 3rem 8rem; }
+
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .social-links {
-        gap: 14px;
+      .writing-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .career-item {
+      .article-card-featured {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+      }
+
+      .article-card-featured .article-img {
+        aspect-ratio: auto;
+      }
+
+      .experience-item {
+        padding: 2.5rem 0;
+      }
+
+      .experience-role {
+        font-size: 1.25rem;
+      }
+
+      .hero-bio {
+        font-size: 1.125rem;
+      }
+
+      .article-card-featured .article-title {
+        font-size: 1.5rem;
+      }
+
+      .contact-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-inner {
+        flex-direction: row;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero { padding: 0 6rem; }
+      .experience { padding: 6rem 6rem 8rem; }
+      .projects { padding: 6rem 6rem 8rem; }
+      .writing { padding: 6rem 6rem 8rem; }
+      .stack-section { padding: 6rem 6rem 8rem; }
+      .contact { padding: 6rem 6rem 8rem; }
+    }
+
+    @media (max-width: 639px) {
+      .hero-sep { display: none; }
+
+      .experience-item {
         grid-template-columns: 1fr;
-      }
-
-      .career-period {
-        text-align: left;
-      }
-
-      .stack-group {
-        grid-template-columns: 1fr;
-        gap: 6px;
-      }
-
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
 
-    <!-- Header -->
-    <header>
-      <div class="header-inner">
-        <div>
-          <div class="name">Juan David Gómez</div>
-          <div class="location">Medellín, Colombia</div>
-        </div>
-        <nav class="social-links">
-          <a href="https://github.com/juandastic" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/juandastic/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://dev.to/juandastic" target="_blank" rel="noopener">Dev.to</a>
-          <a href="https://x.com/juandastic" target="_blank" rel="noopener">X</a>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Hero -->
-    <div class="hero">
-      <h1 class="hero-title">
-        Senior engineer building <em>AI systems</em><br>
-        that solve real problems.
-      </h1>
-      <div class="hero-bio">
-        <p>
-          10+ years shipping scalable web applications and digital products. I care about product engineering,
-          unit economics, and leveraging AI to solve actual human problems.
-        </p>
-        <p>
-          I build the things I want to exist: tools I use daily, architectures I believe in, and systems
-          I'm willing to maintain. The best software comes from identifying real friction and shipping
-          something honest about the tradeoffs.
-        </p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <span class="hero-label">Senior Software Engineer</span>
+      <h1 class="hero-name">Juan David<br><em>Gómez</em></h1>
+      <div class="hero-line"></div>
+      <p class="hero-bio">
+        Building AI systems that solve real problems. 10+ years shipping scalable web applications and digital products. I thrive in fast-paced environments, moving quickly through rapid iterations and leveraging AI to solve actual human problems.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          Get in touch
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+        </a>
+        <span class="hero-sep"></span>
+        <!-- GitHub -->
+        <a href="https://github.com/juandastic" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/juandastic/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <!-- X -->
+        <a href="https://x.com/juandastic" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <span>X</span>
+        </a>
+        <!-- Dev.to -->
+        <a href="https://dev.to/juandastic" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Dev.to">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 21h8"/><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/></svg>
+          <span>Dev.to</span>
+        </a>
       </div>
     </div>
+    <div class="hero-scroll">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+  </section>
 
-    <!-- Career -->
-    <section>
-      <div class="section-label">Experience</div>
-      <div class="career-list">
-        <div class="career-item">
+  <!-- Experience -->
+  <section class="experience" id="experience">
+    <div class="max-w">
+      <span class="section-label">01 — Experience</span>
+      <div class="section-divider"></div>
+      <div class="experience-list">
+        <div class="experience-item">
           <div>
-            <div class="career-role">Senior Software Engineer</div>
-            <div class="career-company">DealMaker</div>
-            <div class="career-industry">Fintech · Capital markets infrastructure</div>
+            <div class="experience-role-row">
+              <h3 class="experience-role">Senior Software Engineer</h3>
+              <span class="experience-badge">Now</span>
+            </div>
+            <p class="experience-company">
+              <span class="experience-company-name">DealMaker</span>
+              <span class="experience-dash">—</span>
+              <span>Fintech · Capital markets infrastructure</span>
+            </p>
           </div>
-          <div class="career-period">Current</div>
+          <span class="experience-period">2025 — Present</span>
         </div>
-        <div class="career-item">
+        <div class="experience-item">
           <div>
-            <div class="career-role">Tech Lead</div>
-            <div class="career-company">La Haus</div>
-            <div class="career-industry">PropTech · LatAm real estate marketplace</div>
+            <div class="experience-role-row">
+              <h3 class="experience-role">Tech Lead</h3>
+            </div>
+            <p class="experience-company">
+              <span class="experience-company-name">La Haus</span>
+              <span class="experience-dash">—</span>
+              <span>PropTech · LatAm real estate marketplace</span>
+            </p>
           </div>
-          <div class="career-period">Previous</div>
+          <span class="experience-period">2019 — 2025</span>
         </div>
-        <div class="career-item">
+        <div class="experience-item">
           <div>
-            <div class="career-role">Sr. Web UI Developer</div>
-            <div class="career-company">Globant · Disney Cruise Line</div>
-            <div class="career-industry">Entertainment · Guest experience platforms</div>
+            <div class="experience-role-row">
+              <h3 class="experience-role">Sr. Web UI Developer</h3>
+            </div>
+            <p class="experience-company">
+              <span class="experience-company-name">Globant · Disney Cruise Line</span>
+              <span class="experience-dash">—</span>
+              <span>Entertainment · Guest experience platforms</span>
+            </p>
           </div>
-          <div class="career-period">Previous</div>
+          <span class="experience-period">2017 — 2019</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Projects -->
-    <section>
-      <div class="section-label">Projects</div>
-      <div class="projects-list">
+  <!-- Projects -->
+  <section class="projects" id="projects">
+    <div class="max-w">
+      <span class="section-label">02 — Projects</span>
+      <div class="section-divider"></div>
+      <div class="projects-grid">
 
-        <div class="project">
+        <div class="project-card">
           <div class="project-header">
-            <span class="project-name">Synapse AI Chat</span>
-            <span class="project-status">live</span>
+            <h3 class="project-name">Synapse AI Chat</h3>
+            <span class="project-live"><span class="project-live-dot"></span>live</span>
           </div>
           <p class="project-desc">
-            A multi-thread, persona-based conversational interface with deep memory. Instead of traditional RAG,
-            it uses a temporal knowledge graph (Neo4j + Graphiti) and a custom context hydration pipeline
-            to maintain persistent psychological context across infinite conversation threads. Solves the
-            real problem of AI companions that forget — permanently.
+            A multi-thread, persona-based conversational interface with deep memory. Uses a temporal knowledge graph (Neo4j + Graphiti) and a custom context hydration pipeline to maintain persistent psychological context across infinite conversation threads.
           </p>
           <div class="project-stack">
             <span class="tag">React 19</span>
             <span class="tag">Convex</span>
-            <span class="tag">Python FastAPI</span>
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
             <span class="tag">Neo4j</span>
             <span class="tag">Graphiti</span>
-            <span class="tag">Gemini Flash</span>
+            <span class="tag">Gemini</span>
           </div>
           <div class="project-links">
-            <a href="https://synapse-chat.juandago.dev/" target="_blank" rel="noopener">Live App</a>
-            <a href="https://github.com/juandastic/synapse-chat-ai" target="_blank" rel="noopener">Frontend</a>
-            <a href="https://github.com/juandastic/synapse-cortex" target="_blank" rel="noopener">Backend</a>
+            <a href="https://synapse-chat.juandago.dev/" target="_blank" rel="noopener noreferrer">Live App<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+            <a href="https://github.com/juandastic/synapse-chat-ai" target="_blank" rel="noopener noreferrer">Frontend<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+            <a href="https://github.com/juandastic/synapse-cortex" target="_blank" rel="noopener noreferrer">Backend<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
           </div>
         </div>
 
-        <div class="project">
+        <div class="project-card">
           <div class="project-header">
-            <span class="project-name">NutriAgent</span>
-            <span class="project-status">live</span>
+            <h3 class="project-name">NutriAgent</h3>
+            <span class="project-live"><span class="project-live-dot"></span>live</span>
           </div>
           <p class="project-desc">
-            An AI nutrition tracker that owns its raw data. Understands natural language and meal photos,
-            logs macros via Telegram or web, syncs to Google Sheets — no subscription, no walled garden.
-            Built because MyFitnessPal didn't fit real workflows. Used daily since launch.
+            An AI nutrition tracker that owns its raw data. Understands natural language and meal photos, logs macros via Telegram or web, syncs to Google Sheets — no subscription, no walled garden. Used daily since launch.
           </p>
           <div class="project-stack">
             <span class="tag">Python</span>
@@ -532,92 +929,332 @@
             <span class="tag">Google Sheets API</span>
           </div>
           <div class="project-links">
-            <a href="https://nutriagent.juandago.dev/" target="_blank" rel="noopener">Live App</a>
-            <a href="https://github.com/juandastic/nutri-agent-bot" target="_blank" rel="noopener">Bot Backend</a>
-            <a href="https://github.com/juandastic/nutri-agent-web" target="_blank" rel="noopener">Web Frontend</a>
+            <a href="https://nutriagent.juandago.dev/" target="_blank" rel="noopener noreferrer">Live App<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+            <a href="https://github.com/juandastic/nutri-agent-bot" target="_blank" rel="noopener noreferrer">Bot<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+            <a href="https://github.com/juandastic/nutri-agent-web" target="_blank" rel="noopener noreferrer">Backend<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
           </div>
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Writing -->
-    <section>
-      <div class="section-label">Writing</div>
-      <div class="writing-list">
+  <!-- Writing -->
+  <section class="writing" id="writing">
+    <div class="max-w">
+      <span class="section-label">03 — Writing</span>
+      <div class="section-divider"></div>
+      <div class="writing-grid">
 
-        <div class="article">
-          <a href="https://dev.to/juandastic/full-circle-giving-my-ais-knowledge-graph-a-notion-interface-using-mcp-2dmp" target="_blank" rel="noopener">
-            Full Circle: Giving My AI's Knowledge Graph a Notion Interface Using MCP
-          </a>
-          <div class="article-meta">How MCP turns rigid sync into a reasoning tool · Dev.to</div>
-        </div>
+        <!-- Featured article -->
+        <a href="https://dev.to/juandastic/i-benchmarked-graphiti-vs-mem0-the-hidden-cost-of-context-blindness-in-ai-memory-4le3" target="_blank" rel="noopener noreferrer" class="article-card article-card-featured">
+          <div class="article-img">
+            <img alt="I Benchmarked Graphiti vs Mem0: The Hidden Cost of Context Blindness in AI Memory" src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F60o38pvvousj4dd6o15a.png" loading="lazy" />
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span>Mar 2026</span>
+              <span class="article-meta-dot">·</span>
+              <span class="article-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                12 min
+              </span>
+              <span class="article-meta-dot">·</span>
+              <span class="article-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+                9
+              </span>
+            </div>
+            <h3 class="article-title">I Benchmarked Graphiti vs Mem0: The Hidden Cost of Context Blindness in AI Memory</h3>
+            <span class="article-read">Read article<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+          </div>
+        </a>
 
-        <div class="article">
-          <a href="https://dev.to/juandastic/beyond-rag-building-an-ai-companion-with-deep-memory-using-knowledge-graphs-2e6e" target="_blank" rel="noopener">
-            Beyond RAG: Building an AI Companion with Deep Memory Using Knowledge Graphs
-          </a>
-          <div class="article-meta">Why vector search misses causality, and what to do about it · Dev.to</div>
-        </div>
+        <!-- Article 2 -->
+        <a href="https://dev.to/juandastic/full-circle-giving-my-ais-knowledge-graph-a-notion-interface-using-mcp-2dmp" target="_blank" rel="noopener noreferrer" class="article-card">
+          <div class="article-img">
+            <img alt="Full Circle: Giving My AI's Knowledge Graph a Notion Interface Using MCP" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxil7ah274tl29nlyeoph.png" loading="lazy" />
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span>Mar 2026</span>
+              <span class="article-meta-dot">·</span>
+              <span class="article-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                5 min
+              </span>
+              <span class="article-meta-dot">·</span>
+              <span class="article-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+                40
+              </span>
+            </div>
+            <h3 class="article-title">Full Circle: Giving My AI's Knowledge Graph a Notion Interface Using MCP</h3>
+            <div class="article-tags">
+              <span class="article-tag">#mcp</span>
+              <span class="article-tag">#ai</span>
+            </div>
+            <span class="article-read">Read article<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+          </div>
+        </a>
 
-        <div class="article">
-          <a href="https://dev.to/juandastic/i-ditched-myfitnesspal-and-built-an-ai-agent-to-track-my-food-3eia" target="_blank" rel="noopener">
-            I Ditched MyFitnessPal and Built an AI Agent to Track My Food
-          </a>
-          <div class="article-meta">Full-stack AI from frustration to daily driver · Dev.to</div>
-        </div>
+        <!-- Article 3 -->
+        <a href="https://dev.to/juandastic/scaling-ai-memory-how-i-tamed-a-120k-token-prompt-with-deterministic-graphrag-4f85" target="_blank" rel="noopener noreferrer" class="article-card">
+          <div class="article-img">
+            <img alt="Scaling AI Memory: How I Tamed a 120k-Token Prompt with Deterministic GraphRAG" src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpimh52xjjiw4x4w4ebma.png" loading="lazy" />
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span>Mar 2026</span>
+              <span class="article-meta-dot">·</span>
+              <span class="article-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                5 min
+              </span>
+              <span class="article-meta-dot">·</span>
+              <span class="article-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+                2
+              </span>
+            </div>
+            <h3 class="article-title">Scaling AI Memory: How I Tamed a 120k-Token Prompt with Deterministic GraphRAG</h3>
+            <div class="article-tags">
+              <span class="article-tag">#ai</span>
+              <span class="article-tag">#rag</span>
+            </div>
+            <span class="article-read">Read article<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+          </div>
+        </a>
+
+        <!-- Article 4 -->
+        <a href="https://dev.to/juandastic/when-5-minutes-isnt-enough-moving-ai-ingestion-from-sync-to-async-and-saving-99-compute-59o8" target="_blank" rel="noopener noreferrer" class="article-card">
+          <div class="article-img">
+            <img alt="When 5 Minutes Isn't Enough: Moving AI Ingestion from Sync to Async" src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbh5tr72f5y4xlxkhspl5.png" loading="lazy" />
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span>Feb 2026</span>
+              <span class="article-meta-dot">·</span>
+              <span class="article-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                4 min
+              </span>
+              <span class="article-meta-dot">·</span>
+              <span class="article-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+                2
+              </span>
+            </div>
+            <h3 class="article-title">When 5 Minutes Isn't Enough: Moving AI Ingestion from Sync to Async</h3>
+            <div class="article-tags">
+              <span class="article-tag">#architecture</span>
+              <span class="article-tag">#performance</span>
+            </div>
+            <span class="article-read">Read article<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+          </div>
+        </a>
+
+        <!-- Article 5 -->
+        <a href="https://dev.to/juandastic/beyond-rag-building-an-ai-companion-with-deep-memory-using-knowledge-graphs-2e6e" target="_blank" rel="noopener noreferrer" class="article-card">
+          <div class="article-img">
+            <img alt="Beyond RAG: Building an AI Companion with Deep Memory Using Knowledge Graphs" src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9kc543f36vntw365i7x6.png" loading="lazy" />
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span>Feb 2026</span>
+              <span class="article-meta-dot">·</span>
+              <span class="article-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                7 min
+              </span>
+              <span class="article-meta-dot">·</span>
+              <span class="article-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+                19
+              </span>
+            </div>
+            <h3 class="article-title">Beyond RAG: Building an AI Companion with "Deep Memory" Using Knowledge Graphs</h3>
+            <div class="article-tags">
+              <span class="article-tag">#ai</span>
+              <span class="article-tag">#llm</span>
+              <span class="article-tag">#rag</span>
+            </div>
+            <span class="article-read">Read article<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+          </div>
+        </a>
+
+        <!-- Article 6 -->
+        <a href="https://dev.to/juandastic/i-used-my-ai-nutrition-coach-every-day-for-a-month-heres-what-i-actually-had-to-fix-1ej8" target="_blank" rel="noopener noreferrer" class="article-card">
+          <div class="article-img">
+            <img alt="I Used My AI Nutrition Agent Every Day for a Month. Here's What I Actually Had to Fix" src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F5upbh7pou3m8j4xffhpv.png" loading="lazy" />
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span>Dec 2025</span>
+              <span class="article-meta-dot">·</span>
+              <span class="article-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                6 min
+              </span>
+            </div>
+            <h3 class="article-title">I Used My AI Nutrition Agent Every Day for a Month. Here's What I Actually Had to Fix</h3>
+            <div class="article-tags">
+              <span class="article-tag">#ai</span>
+              <span class="article-tag">#agents</span>
+            </div>
+            <span class="article-read">Read article<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+          </div>
+        </a>
+
+        <!-- Article 7 -->
+        <a href="https://dev.to/juandastic/i-ditched-myfitnesspal-and-built-an-ai-agent-to-track-my-food-3eia" target="_blank" rel="noopener noreferrer" class="article-card">
+          <div class="article-img">
+            <img alt="I Ditched MyFitnessPal and Built an AI Agent to Track My Food" src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F83ouqqgx5mfp2uqxueo6.png" loading="lazy" />
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span>Nov 2025</span>
+              <span class="article-meta-dot">·</span>
+              <span class="article-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                8 min
+              </span>
+              <span class="article-meta-dot">·</span>
+              <span class="article-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+                5
+              </span>
+            </div>
+            <h3 class="article-title">I Ditched MyFitnessPal and Built an AI Agent to Track My Food</h3>
+            <div class="article-tags">
+              <span class="article-tag">#agents</span>
+              <span class="article-tag">#ai</span>
+            </div>
+            <span class="article-read">Read article<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+          </div>
+        </a>
 
       </div>
       <div class="writing-more">
-        <a href="https://dev.to/juandastic" target="_blank" rel="noopener">All articles on Dev.to →</a>
+        <a href="https://dev.to/juandastic" target="_blank" rel="noopener noreferrer">
+          All articles on Dev.to
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Stack -->
-    <section>
-      <div class="section-label">Stack</div>
+  <!-- Stack -->
+  <section class="stack-section" id="stack">
+    <div class="max-w">
+      <span class="section-label">04 — Stack</span>
+      <div class="section-divider"></div>
       <div class="stack-groups">
-        <div class="stack-group">
+        <div>
           <span class="stack-group-label">Core</span>
           <div class="stack-items">
-            <span class="tag">Ruby on Rails</span>
-            <span class="tag">React</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Python</span>
+            <span class="stack-tag">Ruby on Rails</span>
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">TypeScript</span>
+            <span class="stack-tag">Python</span>
           </div>
         </div>
-        <div class="stack-group">
-          <span class="stack-group-label">AI & Data</span>
+        <div>
+          <span class="stack-group-label">AI &amp; Data</span>
           <div class="stack-items">
-            <span class="tag">LangChain</span>
-            <span class="tag">LangGraph</span>
-            <span class="tag">Neo4j</span>
-            <span class="tag">Gemini</span>
-            <span class="tag">OpenAI</span>
-            <span class="tag">MCP</span>
+            <span class="stack-tag">LangChain</span>
+            <span class="stack-tag">LangGraph</span>
+            <span class="stack-tag">Neo4j</span>
+            <span class="stack-tag">Gemini</span>
+            <span class="stack-tag">OpenAI</span>
+            <span class="stack-tag">MCP</span>
           </div>
         </div>
-        <div class="stack-group">
+        <div>
           <span class="stack-group-label">Infra</span>
           <div class="stack-items">
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">Convex</span>
-            <span class="tag">Cloudflare</span>
-            <span class="tag">DigitalOcean</span>
+            <span class="stack-tag">PostgreSQL</span>
+            <span class="stack-tag">Supabase</span>
+            <span class="stack-tag">Convex</span>
+            <span class="stack-tag">Cloudflare</span>
+            <span class="stack-tag">DigitalOcean</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-      <span class="footer-copy">
-        juandago.dev · <a href="https://github.com/juandastic" target="_blank" rel="noopener">@juandastic</a>
-      </span>
-      <a class="footer-email" href="mailto:juandastic@gmail.com">juandastic@gmail.com</a>
-    </footer>
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="max-w">
+      <span class="section-label">05 — Contact</span>
+      <div class="section-divider"></div>
+      <h2 class="contact-heading">Let's talk</h2>
+      <p class="contact-text">Have a project in mind, want to collaborate, or just want to say hi? Reach out through any of the channels below.</p>
+      <div class="contact-grid">
+        <a href="https://x.com/juandastic" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <div>
+            <span class="contact-card-label">DM on X</span>
+            <span class="contact-card-handle">@juandastic</span>
+          </div>
+        </a>
+        <a href="mailto:juandastic@gmail.com" class="contact-card">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          <div>
+            <span class="contact-card-label">Email</span>
+            <span class="contact-card-handle">juandastic@gmail.com</span>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/juandastic/" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <div>
+            <span class="contact-card-label">LinkedIn</span>
+            <span class="contact-card-handle">juandastic</span>
+          </div>
+        </a>
+      </div>
+      <div class="contact-socials">
+        <a href="https://github.com/juandastic" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/juandastic/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://x.com/juandastic" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <span>X</span>
+        </a>
+        <a href="https://dev.to/juandastic" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Dev.to">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 21h8"/><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/></svg>
+          <span>Dev.to</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-  </div>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 Juan David Gómez · Medellín, Colombia</p>
+      <div class="footer-socials">
+        <a href="https://github.com/juandastic" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/juandastic/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://x.com/juandastic" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://dev.to/juandastic" target="_blank" rel="noopener noreferrer" aria-label="Dev.to">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 21h8"/><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
