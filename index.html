@@ -43,6 +43,7 @@
 
     html {
       scroll-behavior: smooth;
+      background: var(--bg);
     }
 
     body {
@@ -53,6 +54,76 @@
       -moz-osx-font-smoothing: grayscale;
       min-height: 100vh;
     }
+
+    /* ── Animations ── */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Hero stagger entrance */
+    .hero-label,
+    .hero-name,
+    .hero-line,
+    .hero-bio,
+    .hero-actions {
+      opacity: 0;
+      animation: fadeInUp 0.7s ease-out forwards;
+    }
+
+    .hero-label   { animation-delay: 0.1s; }
+    .hero-name    { animation-delay: 0.25s; }
+    .hero-line    { animation-delay: 0.4s; }
+    .hero-bio     { animation-delay: 0.5s; }
+    .hero-actions { animation-delay: 0.65s; }
+
+    .hero-scroll {
+      opacity: 0;
+      animation: fadeIn 1s ease-out 1.2s forwards;
+    }
+
+    /* Scroll-reveal base */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger children inside grids */
+    .reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .reveal-stagger.visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+    .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.12s; }
+    .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.19s; }
+    .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.26s; }
+    .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.33s; }
+    .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.40s; }
+    .reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.47s; }
 
     /* ── Utilities ── */
     .max-w { max-width: var(--max-w); margin: 0 auto; width: 100%; }
@@ -68,6 +139,7 @@
       justify-content: center;
       padding: 0 1.5rem;
       overflow: hidden;
+      background: var(--bg);
     }
 
     .hero-glow {
@@ -207,6 +279,7 @@
     /* ── Experience ── */
     .experience {
       padding: 6rem 1.5rem 8rem;
+      background: var(--bg);
     }
 
     .experience-list {
@@ -271,6 +344,7 @@
     /* ── Projects ── */
     .projects {
       padding: 6rem 1.5rem 8rem;
+      background: var(--bg);
     }
 
     .projects-grid {
@@ -283,11 +357,14 @@
       border: 1px solid var(--border);
       border-radius: 0.5rem;
       padding: 1.5rem 2rem;
-      transition: border-color 0.3s;
+      background: var(--bg);
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
 
     .project-card:hover {
       border-color: var(--primary-30);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
 
     .project-header {
@@ -379,6 +456,7 @@
     /* ── Writing ── */
     .writing {
       padding: 6rem 1.5rem 8rem;
+      background: var(--bg);
     }
 
     .writing-grid {
@@ -395,11 +473,14 @@
       overflow: hidden;
       text-decoration: none;
       color: inherit;
-      transition: border-color 0.3s;
+      background: var(--bg);
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
 
     .article-card:hover {
       border-color: var(--primary-30);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
 
     .article-card-featured {
@@ -541,6 +622,7 @@
     /* ── Stack ── */
     .stack-section {
       padding: 6rem 1.5rem 8rem;
+      background: var(--bg);
     }
 
     .stack-groups {
@@ -578,6 +660,7 @@
     /* ── Contact ── */
     .contact {
       padding: 6rem 1.5rem 8rem;
+      background: var(--bg);
     }
 
     .contact-heading {
@@ -609,11 +692,14 @@
       padding: 1.5rem;
       text-decoration: none;
       color: inherit;
-      transition: border-color 0.3s;
+      background: var(--bg);
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
 
     .contact-card:hover {
       border-color: var(--primary-30);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
 
     .contact-card svg {
@@ -658,6 +744,7 @@
     footer {
       padding: 3rem 1.5rem;
       border-top: 1px solid var(--border);
+      background: var(--bg);
     }
 
     .footer-inner {
@@ -823,7 +910,7 @@
   <section class="experience" id="experience">
     <div class="max-w">
 
-      <div class="experience-list">
+      <div class="experience-list reveal reveal-stagger">
         <div class="experience-item">
           <div>
             <div class="experience-role-row">
@@ -872,7 +959,7 @@
   <section class="projects" id="projects">
     <div class="max-w">
 
-      <div class="projects-grid">
+      <div class="projects-grid reveal reveal-stagger">
 
         <div class="project-card">
           <div class="project-header">
@@ -928,7 +1015,7 @@
   <section class="writing" id="writing">
     <div class="max-w">
 
-      <div class="writing-grid">
+      <div class="writing-grid reveal reveal-stagger">
 
         <!-- Featured article -->
         <a href="https://dev.to/juandastic/i-benchmarked-graphiti-vs-mem0-the-hidden-cost-of-context-blindness-in-ai-memory-4le3" target="_blank" rel="noopener noreferrer" class="article-card article-card-featured">
@@ -1119,7 +1206,7 @@
         </a>
 
       </div>
-      <div class="writing-more">
+      <div class="writing-more reveal">
         <a href="https://dev.to/juandastic" target="_blank" rel="noopener noreferrer">
           All articles on Dev.to
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
@@ -1132,7 +1219,7 @@
   <section class="stack-section" id="stack">
     <div class="max-w">
 
-      <div class="stack-groups">
+      <div class="stack-groups reveal reveal-stagger">
         <div>
           <span class="stack-group-label">Core</span>
           <div class="stack-items">
@@ -1171,9 +1258,9 @@
   <section class="contact" id="contact">
     <div class="max-w">
 
-      <h2 class="contact-heading">Let's talk</h2>
-      <p class="contact-text">Have a project in mind, want to collaborate, or just want to say hi? Reach out through any of the channels below.</p>
-      <div class="contact-grid">
+      <h2 class="contact-heading reveal">Let's talk</h2>
+      <p class="contact-text reveal">Have a project in mind, want to collaborate, or just want to say hi? Reach out through any of the channels below.</p>
+      <div class="contact-grid reveal reveal-stagger">
         <a href="https://x.com/juandastic" target="_blank" rel="noopener noreferrer" class="contact-card">
           <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           <div>
@@ -1196,7 +1283,7 @@
           </div>
         </a>
       </div>
-      <div class="contact-socials">
+      <div class="contact-socials reveal">
         <a href="https://github.com/juandastic" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           <span>GitHub</span>
@@ -1237,6 +1324,26 @@
       </div>
     </div>
   </footer>
+
+  <!-- Scroll reveal observer -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var revealElements = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        revealElements.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      revealElements.forEach(function (el) { observer.observe(el); });
+    });
+  </script>
 
 </body>
 </html>
