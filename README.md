@@ -71,9 +71,12 @@ An AI-powered nutrition tracker that owns its raw data. It understands text and 
 
 I write about the engineering reality of building AI products — the tradeoffs, the architecture decisions, and what actually works.
 
-- [I Ditched MyFitnessPal and Built an AI Agent to Track My Food](https://dev.to/juandastic/i-ditched-myfitnesspal-and-built-an-ai-agent-to-track-my-food-3eia)
-- [Beyond RAG: Building an AI Companion with Deep Memory Using Knowledge Graphs](https://dev.to/juandastic/beyond-rag-building-an-ai-companion-with-deep-memory-using-knowledge-graphs-2e6e)
-- [Scaling AI Memory: How I Tamed a 120k-Token Prompt with Deterministic GraphRAG](https://dev.to/juandastic/scaling-ai-memory-how-i-tamed-a-120k-token-prompt-with-deterministic-graphrag-4f85)
-- [Full Circle: Giving My AI's Knowledge Graph a Notion Interface Using MCP](https://dev.to/juandastic/full-circle-giving-my-ais-knowledge-graph-a-notion-interface-using-mcp-2dmp)
+- [I Benchmarked Graphiti vs Mem0: The Hidden Cost of Context Blindness in AI Memory](https://dev.to/juandastic/i-benchmarked-graphiti-vs-mem0-the-hidden-cost-of-context-blindness-in-ai-memory-4le3) — ❤️ 9 · 12 min read
+- [Full Circle: Giving My AI's Knowledge Graph a Notion Interface Using MCP](https://dev.to/juandastic/full-circle-giving-my-ais-knowledge-graph-a-notion-interface-using-mcp-2dmp) — ❤️ 40 · 5 min read
+- [Scaling AI Memory: How I Tamed a 120k-Token Prompt with Deterministic GraphRAG](https://dev.to/juandastic/scaling-ai-memory-how-i-tamed-a-120k-token-prompt-with-deterministic-graphrag-4f85) — ❤️ 2 · 5 min read
+- [When 5 Minutes Isn't Enough: Moving AI Ingestion from Sync to Async](https://dev.to/juandastic/when-5-minutes-isnt-enough-moving-ai-ingestion-from-sync-to-async-and-saving-99-compute-59o8) — ❤️ 2 · 4 min read
+- [Beyond RAG: Building an AI Companion with Deep Memory Using Knowledge Graphs](https://dev.to/juandastic/beyond-rag-building-an-ai-companion-with-deep-memory-using-knowledge-graphs-2e6e) — ❤️ 19 · 7 min read
+- [I Used My AI Nutrition Agent Every Day for a Month. Here's What I Actually Had to Fix](https://dev.to/juandastic/i-used-my-ai-nutrition-coach-every-day-for-a-month-heres-what-i-actually-had-to-fix-1ej8) — 6 min read
+- [I Ditched MyFitnessPal and Built an AI Agent to Track My Food](https://dev.to/juandastic/i-ditched-myfitnesspal-and-built-an-ai-agent-to-track-my-food-3eia) — ❤️ 5 · 8 min read
 
 → [All articles on Dev.to](https://dev.to/juandastic)
